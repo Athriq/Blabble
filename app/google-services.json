@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "788426895032",
+    "project_id": "blabble-4fd20",
+    "storage_bucket": "blabble-4fd20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788426895032:android:b655e589a422740bacce4d",
+        "android_client_info": {
+          "package_name": "com.bla.blabble"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLAKuPvIc3dIcodL9aGLDvBv4td8FR7B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788426895032:android:b81a1babf78b8c45acce4d",
+        "android_client_info": {
+          "package_name": "com.bla.blabble"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLAKuPvIc3dIcodL9aGLDvBv4td8FR7B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
