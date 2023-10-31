@@ -32,7 +32,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class chatwindo extends AppCompatActivity {
     String reciverimg, reciverUid,reciverName,SenderUID;
-    CircleImageView profile;
     TextView reciverNName;
     FirebaseDatabase database;
     FirebaseAuth firebaseAuth;
@@ -62,7 +61,6 @@ public class chatwindo extends AppCompatActivity {
         sendbtn = findViewById(R.id.sendbtnn);
         textmsg = findViewById(R.id.textmsg);
         reciverNName = findViewById(R.id.recivername);
-        profile = findViewById(R.id.profileimgg);
         messageAdpter = findViewById(R.id.msgadpter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
@@ -70,8 +68,6 @@ public class chatwindo extends AppCompatActivity {
         mmessagesAdpter = new messagesAdpter(chatwindo.this,messagesArrayList);
         messageAdpter.setAdapter(mmessagesAdpter);
 
-
-        Picasso.get().load(reciverimg).into(profile);
         reciverNName.setText(""+reciverName);
 
         SenderUID =  firebaseAuth.getUid();
