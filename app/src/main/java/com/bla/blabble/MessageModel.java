@@ -42,15 +42,15 @@
 
 package com.bla.blabble;
 
-public class msgModelclass {
+public class MessageModel {
     String message;
     String senderid;
     long timeStamp;
 
-    public msgModelclass() {
+    public MessageModel() {
     }
 
-    public msgModelclass(String message, String senderid, long timeStamp) {
+    public MessageModel(String message, String senderid, long timeStamp) {
         this.message = message;
         this.senderid = senderid;
         this.timeStamp = timeStamp;

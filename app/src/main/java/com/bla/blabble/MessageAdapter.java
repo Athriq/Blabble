@@ -2,8 +2,8 @@
 
 package com.bla.blabble;
 
-import static com.bla.blabble.chatwindo.reciverIImg;
-import static com.bla.blabble.chatwindo.senderImg;
+import static com.bla.blabble.ChatWindow.reciverIImg;
+import static com.bla.blabble.ChatWindow.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -23,13 +23,13 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class messagesAdpter extends RecyclerView.Adapter {
+public class MessageAdapter extends RecyclerView.Adapter {
     Context context;
-    ArrayList<msgModelclass> messagesAdpterArrayList;
+    ArrayList<MessageModel> messagesAdpterArrayList;
     int ITEM_SEND=1;
     int ITEM_RECIVE=2;
 
-    public messagesAdpter(Context context, ArrayList<msgModelclass> messagesAdpterArrayList) {
+    public MessageAdapter(Context context, ArrayList<MessageModel> messagesAdpterArrayList) {
         this.context = context;
         this.messagesAdpterArrayList = messagesAdpterArrayList;
     }
@@ -49,7 +49,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        msgModelclass messages = messagesAdpterArrayList.get(position);
+        MessageModel messages = messagesAdpterArrayList.get(position);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -89,7 +89,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        msgModelclass messages = messagesAdpterArrayList.get(position);
+        MessageModel messages = messagesAdpterArrayList.get(position);
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
             return ITEM_SEND;
         } else {

@@ -167,7 +167,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -175,7 +174,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -188,13 +186,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.util.GAuthToken;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class setting extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
     ImageView setprofile;
     EditText setname, setstatus;
     Button donebut;
@@ -275,13 +272,13 @@ public class setting extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(setting.this,MainActivity.class);
+                                                Toast.makeText(Setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(Setting.this,MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             }else {
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(Setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -300,13 +297,13 @@ public class setting extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(setting.this,MainActivity.class);
+                                        Toast.makeText(Setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(Setting.this,MainActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }else {
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

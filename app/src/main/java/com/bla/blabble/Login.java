@@ -6,14 +6,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 
 public class Login extends AppCompatActivity {
     Button chooseTopicButton;
@@ -40,6 +37,7 @@ public class Login extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(Login.this, "You need to specify an alias", Toast.LENGTH_SHORT).show();
             }else {
+                // TODO: tambah user session ke database
                 Intent intent = new Intent(Login.this , MainActivity.class);
                 startActivity(intent);
                 finish();

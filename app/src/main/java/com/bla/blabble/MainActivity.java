@@ -9,7 +9,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
 
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdpter  adapter;
+    UserAdapter adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
@@ -40,10 +39,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        database=FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-        cumbut = findViewById(R.id.camBut);
-        setbut = findViewById(R.id.settingBut);
 
         DatabaseReference reference = database.getReference().child("user");
 
@@ -51,9 +48,8 @@ public class MainActivity extends AppCompatActivity{
 
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdpter(MainActivity.this,usersArrayList);
+        adapter = new UserAdapter(MainActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
-
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,7 +81,7 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(MainActivity.this,login.class);
+                        Intent intent = new Intent(MainActivity.this, Login.class);
                         startActivity(intent);
                         finish();
                     }
@@ -99,22 +95,5 @@ public class MainActivity extends AppCompatActivity{
                 dialog.show();
             }
         });
-
-        setbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, setting.class);
-                startActivity(intent);
-            }
-        });
-
-        cumbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,10);
-            }
-        });
-
     }
 }
